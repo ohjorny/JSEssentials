@@ -50,3 +50,32 @@ xhr.onload = function() {
 }
 
 xhr.send();
+
+// News.json
+var newXhr = new XMLHttpRequest();
+var newsUrl = './news.json';
+newXhr.open('GET', newsUrl, true);
+newXhr.responseType = 'json';
+
+newXhr.onload = function() {
+    var articles = newXhr.response.articles;
+    var articlesDiv = document.getElementById('articles');
+
+    articles.forEach(function(article) {
+        var articleDiv = document.createElement('div');
+        articleDiv.classList.add('article');
+  
+        var title = document.createElement('h2');
+        title.textContent = article.title;
+  
+        var description = document.createElement('p');
+        description.textContent = article.description;
+  
+        articleDiv.appendChild(title);
+        articleDiv.appendChild(description);
+  
+        articlesDiv.appendChild(articleDiv);
+      });
+}
+
+newXhr.send()
