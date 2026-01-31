@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Report</title>
+</head>
+<body>
+   <h1>Weather Report</h1>
+
+  <form id="weatherForm">
+    <label for="lat">Enter latitude:</label>
+    <input step="0.01" required type="number" id="lat" name="lat" min="-90" max="90">
+    
+    <label for="lon">Enter longitude:</label>
+    <input step="0.01" required type="number" id="lon" name="lon" min="-180" max="180">
+    
+    <button type="submit">Get Weather</button>
+  </form>
+
+  <div id="weatherInfo"></div>
+<script src="./weather_report.js"></script>
+</body>
+</html>
